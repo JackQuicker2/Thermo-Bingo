@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Class Bingo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Class Bingo</h1>
+  <p class="date" id="date"></p>
+
+  <div class="layout">
+  <div>
+  <section class="join" id="join">
+    <form id="joinForm" onsubmit="return false">
+      <label for="name">Your name</label>
+      <div class="row">
+        <input type="text" id="name" autocomplete="off" maxlength="40" placeholder="First and last name">
+        <button id="go" type="submit">Get my card</button>
+      </div>
+      <p class="hint">Use the same name all day to get the same card back.</p>
+    </form>
+  </section>
+
+  <section id="play" hidden>
+    <div class="bar">
+      <span>Playing as <strong id="who"></strong></span>
+      <button class="ghost" id="switch">Change name</button>
+    </div>
+    <div class="card">
+      <div class="letters" aria-hidden="true"><div>B</div><div>I</div><div>N</div><div>G</div><div>O</div></div>
+      <div class="grid" id="grid" role="grid" aria-label="Bingo card"></div>
+    </div>
+    <div class="banner" id="banner" aria-live="polite"></div>
+    <div class="actions"><button class="ghost" id="clear">Clear marks</button></div>
+  </section>
+  </div>
+
+  <aside class="board" aria-labelledby="lbTitle">
+    <h2 id="lbTitle">Leaderboard</h2>
+    <p class="sub">Today's players, ranked by bingos, then squares marked</p>
+    <ol id="lb"></ol>
+    <p class="empty" id="lbEmpty">No one has joined yet today.</p>
+  </aside>
+  </div>
+
+  <p class="status" id="status"></p>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
